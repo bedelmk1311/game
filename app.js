@@ -31,3 +31,17 @@ function moveItems() {
   });
 }
 setInterval(moveItems, 50);
+
+//  衝突判定
+
+function checkCollision(player, item) {
+  const p = player.getBoundingClientRect();
+  const i = item.getBoundingClientRect();
+
+  return !(
+    p.bottom < i.top ||
+    p.top > i.bottom ||
+    p.right < i.left ||
+    p.left > i.right
+  );
+}
