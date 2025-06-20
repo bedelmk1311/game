@@ -45,3 +45,40 @@ function checkCollision(player, item) {
     p.left > i.right
   );
 }
+
+// ライフ管理・ゲームオーバー処理
+
+let life = 3;
+const lifeDisplay = document.getElementById('life');
+const gameOverDisplay = document.getElementById('gameOver');
+let isGameOver = false;
+
+// moveItems 関数に衝突処理を組み込む
+function moveItems() {
+  if (isGameOver) return; // 終了状態なら何もしない
+
+  const items = document.querySelectorAll('.item');
+  items.forEach(item => {
+    let top = parseInt(item.style.top || 0);
+    item.style.top = (top + 5) + 'px';
+
+    if (checkCollision(player, item)) {
+      item.remove();
+      life--;
+      lifeDisplay.textContent = 'ライフ: ' + life;
+      if (life <= 0) {
+        gameOver();
+      }
+    } else if (top > window.innerHeight) {
+      item.remove();
+    }
+  });
+}
+
+// ゲームオーバー処理
+
+function gameOver() {
+  isGameOver = true;
+  gameOverDisplay.style.display = 'block';
+}
+
