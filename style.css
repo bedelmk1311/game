@@ -17,3 +17,25 @@
   position: absolute;
 }
 
+/* ライフ */
+
+#life {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+/* ゲーム終了画面 */
+
+#gameOver {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 48px;
+  font-weight: bold;
+}
+

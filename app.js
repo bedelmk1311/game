@@ -2,11 +2,12 @@ const player = document.getElementById('player');
 let x = 100;
 let y = 100;
 
+// playerの動き
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') x += 10;
-  if (e.key === 'ArrowLeft') x -= 10;
-  if (e.key === 'ArrowUp') y -= 10;
-  if (e.key === 'ArrowDown') y += 10;
+  if (e.key === 'ArrowRight') x += 20;
+  if (e.key === 'ArrowLeft') x -= 20;
+  if (e.key === 'ArrowUp') y -= 20;
+  if (e.key === 'ArrowDown') y += 20;
   player.style.left = x + 'px';
   player.style.top = y + 'px';
 });
@@ -33,7 +34,6 @@ function moveItems() {
 setInterval(moveItems, 50);
 
 //  衝突判定
-
 function checkCollision(player, item) {
   const p = player.getBoundingClientRect();
   const i = item.getBoundingClientRect();
