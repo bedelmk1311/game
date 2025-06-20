@@ -6,3 +6,12 @@
   background-size: cover;
   position: absolute;
 }
+
+/* 敵・アイテム */
+.item {
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  position: absolute;
+}
+
