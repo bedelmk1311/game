@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ミニゲーム</title>
+  <style>
+    #player {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="player"></div>
+
+  <script>
+    const player = document.getElementById('player');
+    let x = 100;
+    let y = 100;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') x += 10;
+      if (e.key === 'ArrowLeft') x -= 10;
+      if (e.key === 'ArrowUp') y -= 10;
+      if (e.key === 'ArrowDown') y += 10;
+      player.style.left = x + 'px';
+      player.style.top = y + 'px';
+    });
+  </script>
+</body>
+</html>
