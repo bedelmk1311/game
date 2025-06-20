@@ -20,3 +20,14 @@ function createItem() {
   document.body.appendChild(item);
 }
 setInterval(createItem, 1000); // 1秒ごとに生成
+
+// アイテムを落下させる
+function moveItems() {
+  const items = document.querySelectorAll('.item');
+  items.forEach(item => {
+    let top = parseInt(item.style.top || 0);
+    item.style.top = (top + 5) + 'px';
+    if (top > window.innerHeight) item.remove(); // 画面外で削除
+  });
+}
+setInterval(moveItems, 50);
