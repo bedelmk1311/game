@@ -11,7 +11,9 @@
 .item {
   width: 20px;
   height: 20px;
-  background: red;
+  /* background: red; */
+  background-image: url('images/item.png');
+  background-size: cover;
   position: absolute;
 }
 
